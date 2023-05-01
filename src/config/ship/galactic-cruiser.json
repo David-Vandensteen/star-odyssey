@@ -1,0 +1,39 @@
+{
+  "model": "Galactic Cruiser",
+  "maxSpeed": 10000,
+  "acceleration": 2000,
+  "maneuverability": 75,
+  "fuelCapacity": 5000,
+  "jumpRange": 150,
+  "armor": 100,
+  "shieldCapacity": 500,
+  "weapons": [
+    {
+      "name": "Photon Cannon",
+      "damage": 50,
+      "accuracy": 80,
+      "fireRate": 3,
+      "energyCost": 20
+    },
+    {
+      "name": "Plasma Torpedo",
+      "damage": 150,
+      "accuracy": 60,
+      "fireRate": 1,
+      "energyCost": 100
+    }
+  ],
+  "warpDrive": {
+    "chargeTime": 5,
+    "cooldownTime": 10,
+    "powerConsumption": 200
+  },
+  "maintenanceCosts": {
+    "repair": 500,
+    "fuel": 50
+  },
+  "buyingAndSellingCosts": {
+    "buyingPrice": 1000,
+    "sellingPrice": 750
+  }
+}

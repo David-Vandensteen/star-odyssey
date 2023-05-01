@@ -1,0 +1,21 @@
+{
+	"name": "star-odyssey",
+  "imports": {
+    "#src/*": "./src/*.js"
+  },
+	"scripts": {
+		"build": "esbuild --bundle src/main.js --outfile=www/main.js --minify",
+		"dev": "esbuild --bundle src/main.js --outfile=www/main.js --servedir=www",
+		"zip": "npm run build && mkdir -p dist && zip -r dist/game.zip www -x \"**/.DS_Store\""
+	},
+	"dependencies": {
+		"kaboom": "^3000.0.0-beta.3"
+	},
+	"devDependencies": {
+		"esbuild": "^0.17.18",
+		"eslint": "^8.39.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-import-resolver-alias": "^1.1.2",
+		"eslint-plugin-import": "^2.27.5"
+	}
+}

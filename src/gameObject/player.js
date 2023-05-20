@@ -1,54 +1,36 @@
-let kaboomInstance;
+import { GameObject } from '#src/model/gameObject';
 
-const register = (kaboom) => {
-  if (!kaboom) throw new Error('PalyerGameObject::Kaboom instance is not provided');
-  kaboomInstance = kaboom;
-};
-
-export default class PlayerGameObject {
-  static init(kaboom) {
-    register(kaboom);
-    const { loadSprite } = kaboomInstance;
-    loadSprite('player', 'sprites/neocore.png');
-    return PlayerGameObject;
+export default class PlayerGameObject extends GameObject {
+  loadSprite() {
+    this.kaboom.loadSprite('player', 'sprites/neocore.png');
+    return this;
   }
 
-  static draw(x, y) {
-    const {
-      add,
-      pos,
-      sprite,
-      onKeyDown,
-      onClick,
-      addKaboom,
-      mousePos,
-    } = kaboomInstance;
-
+  add(x, y) {
     const speed = 320;
-
-    const player = add([
-      pos(x, y),
-      sprite('player'),
+    const player = this.kaboom.add([
+      this.kaboom.pos(x, y),
+      this.kaboom.sprite('player'),
     ]);
 
-    onKeyDown('up', () => {
+    this.kaboom.onKeyDown('up', () => {
       player.move(0, -speed);
     });
 
-    onKeyDown('down', () => {
+    this.kaboom.onKeyDown('down', () => {
       player.move(0, speed);
     });
 
-    onKeyDown('left', () => {
+    this.kaboom.onKeyDown('left', () => {
       player.move(-speed, 0);
     });
 
-    onKeyDown('right', () => {
+    this.kaboom.onKeyDown('right', () => {
       player.move(speed, 0);
     });
 
-    onClick(() => addKaboom(mousePos()));
-    return PlayerGameObject;
+    this.kaboom.onClick(() => this.kaboom.addKaboom(this.kaboom.mousePos()));
+    return this;
   }
 }
 

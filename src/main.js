@@ -1,5 +1,5 @@
 import { GameService } from '#src/service/game';
-import { GameScene } from '#src/scene/game';
+import { TestScene } from '#src/scene/test';
 
 GameService
   .init();
@@ -7,7 +7,7 @@ GameService
 const kaboom = GameService
   .getKaboom();
 
-GameScene
-  .init(kaboom)
-  .draw()
-  .run();
+new TestScene(kaboom)
+  .loadSprite()
+  .add()
+  .go();

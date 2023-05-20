@@ -6,6 +6,7 @@
 	"scripts": {
 		"build": "esbuild --bundle src/main.js --outfile=www/main.js --minify",
 		"dev": "esbuild --bundle src/main.js --outfile=www/main.js --servedir=www",
+    "lint": "eslint src/",
 		"zip": "npm run build && mkdir -p dist && zip -r dist/game.zip www -x \"**/.DS_Store\""
 	},
 	"dependencies": {

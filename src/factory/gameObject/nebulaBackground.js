@@ -1,7 +1,7 @@
 import { GameObject } from '#src/model/gameObject';
 
-export default class NebulaBackgroundGameObject extends GameObject {
-  loadSprite() {
+export default class NebulaBackgroundFactoryGameObject extends GameObject {
+  load() {
     this.kaboom.loadSprite('nebula', 'sprites/nebula.jpg');
     return this;
   }
@@ -16,4 +16,4 @@ export default class NebulaBackgroundGameObject extends GameObject {
   }
 }
 
-export { NebulaBackgroundGameObject };
+export { NebulaBackgroundFactoryGameObject };

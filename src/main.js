@@ -8,6 +8,6 @@ const kaboom = GameService
   .getKaboom();
 
 new TestScene(kaboom)
-  .loadSprite()
+  .load()
   .add()
   .go();
